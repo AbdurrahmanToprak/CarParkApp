@@ -1,0 +1,7 @@
+﻿@using Microsoft.Extensions.Localization
+@{
+    ViewData["Title"] = "Home Page";
+}
+@inject IStringLocalizer<SharedResource> localizer
+    <h1>@localizer["Welcome"]</h1>
+
