@@ -1,9 +1,13 @@
+using CarPark.Core.Repository.Abstract;
+using CarPark.Core.Settings;
+using CarPark.DataAccess.Repository;
 using CarPark.User.Resources;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Localization.Routing;
 using Microsoft.Extensions.Options;
 using Serilog;
+using System.Configuration;
 using System.Globalization;
 using System.Reflection;
 
@@ -41,18 +45,18 @@ builder.Services.Configure<RequestLocalizationOptions>(opt => {
     opt.SupportedCultures = supportedCultures;
     opt.SupportedUICultures = supportedCultures;
 
-    //opt.RequestCultureProviders = new List<IRequestCultureProvider>
-    //{
-    //    new QueryStringRequestCultureProvider(),
-    //    new CookieRequestCultureProvider(),
-    //    new AcceptLanguageHeaderRequestCultureProvider(),
-    //};
-
-    opt.RequestCultureProviders = new[] {new RouteDataRequestCultureProvider()
+    opt.RequestCultureProviders = new List<IRequestCultureProvider>
     {
-        Options = opt
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider(),
+        new AcceptLanguageHeaderRequestCultureProvider(),
+    };
 
-    } };
+    //opt.RequestCultureProviders = new[] {new RouteDataRequestCultureProvider()
+    //{
+    //    Options = opt
+
+    //} };
 });
 
 builder.Services.AddMvc()
@@ -64,6 +68,9 @@ builder.Services.AddMvc()
         return factory.Create(nameof(SharedModelResource), assemblyName.Name);
     }
     );
+
+builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("MongoDBConnection"));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(MongoRepositoryBase<>));
 
 var app = builder.Build();
 
@@ -90,6 +97,6 @@ if (options != null)
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{culture}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

@@ -707,3 +707,715 @@
 2024-11-09 00:16:14.584 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - null null
 2024-11-09 00:16:14.699 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 117.3628ms
 2024-11-09 00:16:14.741 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - 200 null text/javascript; charset=UTF-8 157.802ms
+2024-11-09 02:59:32.066 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 02:59:38.352 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 02:59:38.354 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 02:59:39.293 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 02:59:39.295 +03:00 [INF] Hosting environment: Development
+2024-11-09 02:59:39.297 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 02:59:50.811 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 02:59:52.712 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 1995.74ms
+2024-11-09 02:59:52.784 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:00:23.963 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/tr-TR/home/index - null null
+2024-11-09 03:00:24.007 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:00:24.741 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:02:30.784 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 126036.7191ms
+2024-11-09 03:02:30.871 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:02:30.876 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.TimeoutException: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T00:01:04.4789093Z", LastUpdateTimestamp: "2024-11-09T00:01:04.4789094Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T00:01:04.5914988Z", LastUpdateTimestamp: "2024-11-09T00:01:04.5914989Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T00:01:04.5869189Z", LastUpdateTimestamp: "2024-11-09T00:01:04.5869190Z" }] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.IClusterExtensions.SelectServerAndPinIfNeeded(IClusterInternal cluster, ICoreSessionHandle session, IServerSelector selector, IReadOnlyCollection`1 deprioritizedServers, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.WritableServerBinding.GetWriteChannelSource(IReadOnlyCollection`1 deprioritizedServers, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.WritableServerBinding.GetWriteChannelSource(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.ReadWriteBindingHandle.GetWriteChannelSource(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Initialize(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Create(IWriteBinding binding, Boolean retryRequested, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.Execute(IWriteBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteWriteOperation[TResult](IWriteBinding binding, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteWriteOperation[TResult](IClientSessionHandle session, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass29_0.<BulkWrite>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.<>c__DisplayClass74_0.<InsertOne>b__0(IEnumerable`1 requests, BulkWriteOptions bulkWriteOptions)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOne(TDocument document, InsertOneOptions options, Action`2 bulkWrite)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOne(TDocument document, InsertOneOptions options, CancellationToken cancellationToken)
+   at CarPark.User.Controllers.HomeController.Index()
+   at lambda_method1(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-09 03:02:31.644 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/tr-TR/home/index - 500 null text/html; charset=utf-8 127684.5053ms
+2024-11-09 03:02:32.282 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-09 03:02:32.315 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - null null
+2024-11-09 03:02:32.397 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 113.8483ms
+2024-11-09 03:02:32.874 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - 200 null text/javascript; charset=UTF-8 559.9641ms
+2024-11-09 03:03:59.131 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:03:59.671 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:03:59.673 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:03:59.718 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:03:59.720 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:03:59.722 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:04:00.447 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:04:00.700 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 265.453ms
+2024-11-09 03:04:00.768 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:04:15.711 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/tr-TR/home/index - null null
+2024-11-09 03:04:15.728 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:04:16.648 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:09:42.131 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:09:42.707 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:09:42.709 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:09:42.745 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:09:42.747 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:09:42.749 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:09:44.327 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:09:44.525 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 207.7087ms
+2024-11-09 03:09:44.535 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:10:02.711 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:10:03.066 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:10:03.068 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:10:03.103 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:10:03.105 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:10:03.106 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:10:04.216 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:10:04.396 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 185.6579ms
+2024-11-09 03:10:04.408 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:10:47.173 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/en-US/home/index - null null
+2024-11-09 03:10:47.278 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:10:47.310 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:13:11.095 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:13:11.694 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:13:11.696 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:13:11.734 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:13:11.735 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:13:11.737 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:13:13.073 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:13:13.210 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 142.1264ms
+2024-11-09 03:13:13.221 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:13:23.614 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/en-US/home/index - null null
+2024-11-09 03:13:23.647 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:13:23.777 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:15:37.852 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:15:38.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:15:38.628 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:15:38.629 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:15:38.733 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-09 03:15:39.076 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 404 null null 305.7629ms
+2024-11-09 03:15:39.081 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44392/, Response status code: 404
+2024-11-09 03:17:38.852 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:17:39.186 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:17:39.188 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:17:39.220 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:17:39.222 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:17:39.224 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:17:41.216 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:17:41.488 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 404 0 null 287.9959ms
+2024-11-09 03:17:41.523 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7262/, Response status code: 404
+2024-11-09 03:17:47.605 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/en-US/home/index - null null
+2024-11-09 03:17:47.676 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:17:48.119 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:21:59.412 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:22:00.444 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:22:00.447 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:22:00.478 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:22:00.480 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:22:00.481 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:22:04.965 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:22:05.208 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:22:05.489 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:25:54.619 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:25:55.485 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:25:55.487 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:25:55.561 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:25:55.572 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:25:55.574 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:25:56.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:25:56.692 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:25:56.751 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:27:50.589 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:27:50.929 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:27:50.930 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:27:50.966 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:27:50.969 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:27:50.970 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:27:55.116 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:27:55.197 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:27:55.238 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:30:10.056 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:30:10.372 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:30:10.374 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:30:10.405 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:30:10.407 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:30:10.408 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:30:11.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:30:11.661 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:30:11.703 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 03:32:16.144 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 03:32:16.466 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 03:32:16.467 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 03:32:16.506 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 03:32:16.507 +03:00 [INF] Hosting environment: Development
+2024-11-09 03:32:16.509 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 03:32:17.223 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 03:32:17.321 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 03:32:17.355 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 21:39:43.082 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 21:39:48.484 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 21:39:48.490 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 21:39:49.130 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 21:39:49.132 +03:00 [INF] Hosting environment: Development
+2024-11-09 21:39:49.133 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 21:39:59.881 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 21:40:04.383 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 21:40:07.885 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 21:44:48.606 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 21:44:48.995 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 21:44:48.996 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 21:44:49.029 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 21:44:49.031 +03:00 [INF] Hosting environment: Development
+2024-11-09 21:44:49.032 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 21:44:51.408 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 21:44:51.781 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 21:44:51.832 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 21:46:22.731 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 21:46:23.014 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 21:46:23.016 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 21:46:23.044 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 21:46:23.046 +03:00 [INF] Hosting environment: Development
+2024-11-09 21:46:23.047 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 21:46:23.754 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 21:46:23.830 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 21:46:23.866 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:01:44.428 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:01:46.821 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:01:46.823 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:01:47.007 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:01:47.009 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:01:47.010 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:01:52.348 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:01:52.906 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:01:53.151 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:03:56.171 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 123014.2408ms
+2024-11-09 22:03:56.190 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:03:56.209 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.TimeoutException: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:02:33.3717071Z", LastUpdateTimestamp: "2024-11-09T19:02:33.3717073Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:02:33.3611468Z", LastUpdateTimestamp: "2024-11-09T19:02:33.3611470Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:02:33.3647560Z", LastUpdateTimestamp: "2024-11-09T19:02:33.3647562Z" }] }.
+   at MongoDB.Driver.Core.Clusters.Cluster.ThrowTimeoutException(IServerSelector selector, ClusterDescription description)
+   at MongoDB.Driver.Core.Clusters.Cluster.WaitForDescriptionChanged(IServerSelector selector, ClusterDescription description, Task descriptionChangedTask, TimeSpan timeout, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.Cluster.SelectServer(IServerSelector selector, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Clusters.IClusterExtensions.SelectServerAndPinIfNeeded(IClusterInternal cluster, ICoreSessionHandle session, IServerSelector selector, IReadOnlyCollection`1 deprioritizedServers, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.WritableServerBinding.GetWriteChannelSource(IReadOnlyCollection`1 deprioritizedServers, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.WritableServerBinding.GetWriteChannelSource(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Bindings.ReadWriteBindingHandle.GetWriteChannelSource(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Initialize(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.RetryableWriteContext.Create(IWriteBinding binding, Boolean retryRequested, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Operations.BulkMixedWriteOperation.Execute(IWriteBinding binding, CancellationToken cancellationToken)
+   at MongoDB.Driver.OperationExecutor.ExecuteWriteOperation[TResult](IWriteBinding binding, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.ExecuteWriteOperation[TResult](IClientSessionHandle session, IWriteOperation`1 operation, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IClientSessionHandle session, IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.<>c__DisplayClass29_0.<BulkWrite>b__0(IClientSessionHandle session)
+   at MongoDB.Driver.MongoCollectionImpl`1.UsingImplicitSession[TResult](Func`2 func, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionImpl`1.BulkWrite(IEnumerable`1 requests, BulkWriteOptions options, CancellationToken cancellationToken)
+   at MongoDB.Driver.MongoCollectionBase`1.<>c__DisplayClass74_0.<InsertOne>b__0(IEnumerable`1 requests, BulkWriteOptions bulkWriteOptions)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOne(TDocument document, InsertOneOptions options, Action`2 bulkWrite)
+   at MongoDB.Driver.MongoCollectionBase`1.InsertOne(TDocument document, InsertOneOptions options, CancellationToken cancellationToken)
+   at CarPark.User.Controllers.HomeController.Index() in C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\Controllers\HomeController.cs:line 58
+   at lambda_method1(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-09 22:03:58.241 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-09 22:03:58.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/ - 500 null text/html; charset=utf-8 125893.8051ms
+2024-11-09 22:03:58.272 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/_vs/browserLink - null null
+2024-11-09 22:03:58.279 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 38.2124ms
+2024-11-09 22:03:58.950 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/_vs/browserLink - 200 null text/javascript; charset=UTF-8 678.7811ms
+2024-11-09 22:03:59.115 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/favicon.ico - null null
+2024-11-09 22:03:59.266 +03:00 [INF] The file /favicon.ico was not modified
+2024-11-09 22:03:59.269 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7262/favicon.ico - 304 null image/x-icon 153.5637ms
+2024-11-09 22:05:14.504 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:05:15.061 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:05:15.063 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:05:15.093 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:05:15.095 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:05:15.096 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:05:15.637 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:05:15.815 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:05:15.858 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:13:25.151 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:13:25.523 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:13:25.526 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:13:25.565 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:13:25.567 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:13:25.568 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:13:26.136 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:13:26.251 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:13:26.290 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:17:18.574 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:17:18.897 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:17:18.899 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:17:18.931 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:17:18.933 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:17:18.935 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:17:19.326 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:17:19.433 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:17:19.486 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:17:50.524 +03:00 [ERR] MongoDB bağlantı hatası: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:17:50.1073910Z", LastUpdateTimestamp: "2024-11-09T19:17:50.1073911Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:17:49.9582720Z", LastUpdateTimestamp: "2024-11-09T19:17:49.9582720Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:17:50.1125276Z", LastUpdateTimestamp: "2024-11-09T19:17:50.1125277Z" }] }.
+2024-11-09 22:17:50.617 +03:00 [INF] Executing ViewResult, running view Error.
+2024-11-09 22:19:39.277 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:19:39.605 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:19:39.607 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:19:39.644 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:19:39.646 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:19:39.648 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:19:40.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:19:40.587 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:19:40.623 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:20:11.612 +03:00 [ERR] MongoDB bağlantı hatası: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:20:11.3978686Z", LastUpdateTimestamp: "2024-11-09T19:20:11.3978687Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:20:11.3926923Z", LastUpdateTimestamp: "2024-11-09T19:20:11.3926925Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:20:10.8167830Z", LastUpdateTimestamp: "2024-11-09T19:20:10.8167833Z" }] }.
+2024-11-09 22:20:11.644 +03:00 [INF] Executing ViewResult, running view Error.
+2024-11-09 22:23:24.859 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:23:25.239 +03:00 [INF] Now listening on: https://localhost:7262
+2024-11-09 22:23:25.241 +03:00 [INF] Now listening on: http://localhost:5293
+2024-11-09 22:23:25.289 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:23:25.291 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:23:25.292 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:23:26.073 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7262/ - null null
+2024-11-09 22:23:26.166 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:23:26.220 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:23:57.318 +03:00 [ERR] MongoDB bağlantı hatası: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:23:56.5316643Z", LastUpdateTimestamp: "2024-11-09T19:23:56.5316643Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:23:56.5252346Z", LastUpdateTimestamp: "2024-11-09T19:23:56.5252347Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:23:56.5351993Z", LastUpdateTimestamp: "2024-11-09T19:23:56.5351994Z" }] }.
+2024-11-09 22:23:57.344 +03:00 [INF] Executing ViewResult, running view Error.
+2024-11-09 22:32:22.415 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:32:25.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-09 22:32:25.169 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:32:25.170 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:32:25.170 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:32:25.423 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:32:25.725 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:33:00.122 +03:00 [ERR] MongoDB bağlantı hatası: A timeout occurred after 30000ms selecting a server using CompositeServerSelector{ Selectors = WritableServerSelector, LatencyLimitingServerSelector{ AllowedLatencyRange = 00:00:00.0150000 }, OperationsCountServerSelector }. Client view of cluster state is { ClusterId : "1", Type : "ReplicaSet", State : "Disconnected", Servers : [{ ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-00.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:32:59.0701938Z", LastUpdateTimestamp: "2024-11-09T19:32:59.0701941Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-01.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:32:58.9989244Z", LastUpdateTimestamp: "2024-11-09T19:32:58.9989246Z" }, { ServerId: "{ ClusterId : 1, EndPoint : "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017" }", EndPoint: "Unspecified/carparkcluster-shard-00-02.hb7bu.mongodb.net:27017", ReasonChanged: "Heartbeat", State: "Disconnected", ServerVersion: , TopologyVersion: , Type: "Unknown", HeartbeatException: "MongoDB.Driver.MongoConnectionException: An exception occurred while opening a connection to the server.
+ ---> System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090304): Yerel Güvenlik Yetkilisi ile bağlantı kurulamıyor
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.AuthenticateAsClient(String targetHost, X509CertificateCollection clientCertificates, SslProtocols enabledSslProtocols, Boolean checkCertificateRevocation)
+   at MongoDB.Driver.Core.Connections.SslStreamFactory.CreateStream(EndPoint endPoint, CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Core.Connections.BinaryConnection.OpenHelper(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Connections.BinaryConnection.Open(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.InitializeConnection(CancellationToken cancellationToken)
+   at MongoDB.Driver.Core.Servers.ServerMonitor.Heartbeat(CancellationToken cancellationToken)", LastHeartbeatTimestamp: "2024-11-09T19:32:59.0750928Z", LastUpdateTimestamp: "2024-11-09T19:32:59.0750931Z" }] }.
+2024-11-09 22:33:00.181 +03:00 [INF] Executing ViewResult, running view Error.
+2024-11-09 22:34:14.269 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:34:14.579 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-09 22:34:14.607 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:34:14.608 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:34:14.608 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:34:14.664 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:34:14.698 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:49:05.086 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-09 22:49:07.425 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-09 22:49:07.671 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-09 22:49:07.672 +03:00 [INF] Hosting environment: Development
+2024-11-09 22:49:07.672 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-09 22:49:08.111 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:49:08.302 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-09 22:52:17.579 +03:00 [INF] Executing ViewResult, running view Index.
+2024-11-09 22:52:22.044 +03:00 [INF] Executed ViewResult - view Index executed in 4624.3994ms.
+2024-11-09 22:52:22.080 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 193776.2535ms
+2024-11-09 22:52:22.103 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-09 22:52:22.171 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-11-09 22:52:22.307 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2024-11-09 22:52:22.307 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/CarPark.User.styles.css?v=A7BfXe2RqemGLp4ozURvWYCpM23yxCsUrSB5ukria6I - null null
+2024-11-09 22:52:22.328 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 200 null text/html; charset=utf-8 195042.7453ms
+2024-11-09 22:52:22.418 +03:00 [INF] Sending file. Request path: '/CarPark.User.styles.css'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\obj\Debug\net8.0\scopedcss\bundle\CarPark.User.styles.css'
+2024-11-09 22:52:22.418 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\css\site.css'
+2024-11-09 22:52:22.419 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/CarPark.User.styles.css?v=A7BfXe2RqemGLp4ozURvWYCpM23yxCsUrSB5ukria6I - 200 1130 text/css 112.2713ms
+2024-11-09 22:52:22.419 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 200 362 text/css 114.9014ms
+2024-11-09 22:52:22.462 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-11-09 22:52:22.466 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/lib/jquery/dist/jquery.min.js - null null
+2024-11-09 22:52:23.252 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2024-11-09 22:52:23.281 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 1109.6616ms
+2024-11-09 22:52:23.285 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2024-11-09 22:52:23.289 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\js\site.js'
+2024-11-09 22:52:23.289 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 4.7923ms
+2024-11-09 22:52:23.332 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-09 22:52:23.339 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-09 22:52:23.438 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.9049ms
+2024-11-09 22:52:24.480 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1140.4846ms
+2024-11-09 22:52:25.403 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2024-11-09 22:52:25.405 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 2942.7644ms
+2024-11-09 22:52:26.094 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\lib\jquery\dist\jquery.min.js'
+2024-11-09 22:52:26.097 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 3631.1381ms
+2024-11-09 22:52:26.185 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/favicon.ico - null null
+2024-11-09 22:52:26.345 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\favicon.ico'
+2024-11-09 22:52:26.346 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/favicon.ico - 200 5430 image/x-icon 160.375ms
+2024-11-10 01:00:21.235 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-10 01:00:25.252 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-10 01:00:25.391 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-10 01:00:25.391 +03:00 [INF] Hosting environment: Development
+2024-11-10 01:00:25.391 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-10 01:00:25.653 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:00:25.850 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-10 01:00:25.859 +03:00 [INF] Executing ViewResult, running view Index.
+2024-11-10 01:00:27.188 +03:00 [INF] Executed ViewResult - view Index executed in 1331.4411ms.
+2024-11-10 01:00:27.233 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 1382.1186ms
+2024-11-10 01:00:27.233 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:00:27.277 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 200 null text/html; charset=utf-8 2056.8749ms
+2024-11-10 01:00:27.565 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:00:27.638 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:00:27.695 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.1758ms
+2024-11-10 01:00:28.790 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1152.9557ms
+2024-11-10 01:00:39.009 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/user/create - null null
+2024-11-10 01:00:39.016 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:00:39.189 +03:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller CarPark.User.Controllers.UserController (CarPark.User).
+2024-11-10 01:04:31.737 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-10 01:04:32.054 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-10 01:04:32.081 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-10 01:04:32.082 +03:00 [INF] Hosting environment: Development
+2024-11-10 01:04:32.082 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-10 01:04:32.167 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:04:32.210 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-10 01:04:32.236 +03:00 [INF] Executing ViewResult, running view Index.
+2024-11-10 01:04:32.389 +03:00 [INF] Executed ViewResult - view Index executed in 162.8345ms.
+2024-11-10 01:04:32.396 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 184.7801ms
+2024-11-10 01:04:32.396 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:04:32.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 200 null text/html; charset=utf-8 363.7358ms
+2024-11-10 01:04:32.446 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:04:32.446 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:04:32.454 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.5026ms
+2024-11-10 01:04:32.501 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.0923ms
+2024-11-10 01:04:39.159 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/user/create - null null
+2024-11-10 01:04:39.170 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:04:39.183 +03:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller CarPark.User.Controllers.UserController (CarPark.User).
+2024-11-10 01:05:06.620 +03:00 [INF] Executing ViewResult, running view Create.
+2024-11-10 01:05:08.699 +03:00 [INF] Executed ViewResult - view Create executed in 2081.3473ms.
+2024-11-10 01:05:08.700 +03:00 [INF] Executed action CarPark.User.Controllers.UserController.Create (CarPark.User) in 29515.9756ms
+2024-11-10 01:05:08.700 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:05:08.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/user/create - 200 null text/html; charset=utf-8 29542.8226ms
+2024-11-10 01:05:08.775 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2024-11-10 01:05:08.775 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2024-11-10 01:05:08.775 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:05:08.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:05:08.785 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 2.9221ms
+2024-11-10 01:05:08.839 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.9708ms
+2024-11-10 01:05:11.220 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2024-11-10 01:05:11.221 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5824 text/javascript 2447.0324ms
+2024-11-10 01:05:11.228 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2024-11-10 01:05:11.230 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/lib/jquery-validation/dist/jquery.validate.min.js - 200 24601 text/javascript 2456.5507ms
+2024-11-10 01:10:35.284 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-10 01:10:35.854 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-10 01:10:35.854 +03:00 [INF] Hosting environment: Development
+2024-11-10 01:10:35.854 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-10 01:10:35.916 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-10 01:10:36.017 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:10:36.049 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-10 01:10:36.058 +03:00 [INF] Executing ViewResult, running view Index.
+2024-11-10 01:10:36.204 +03:00 [INF] Executed ViewResult - view Index executed in 147.7735ms.
+2024-11-10 01:10:36.209 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 159.2509ms
+2024-11-10 01:10:36.209 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:10:36.221 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 200 null text/html; charset=utf-8 309.6732ms
+2024-11-10 01:10:36.229 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/CarPark.User.styles.css?v=A7BfXe2RqemGLp4ozURvWYCpM23yxCsUrSB5ukria6I - null null
+2024-11-10 01:10:36.233 +03:00 [INF] The file /CarPark.User.styles.css was not modified
+2024-11-10 01:10:36.235 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/CarPark.User.styles.css?v=A7BfXe2RqemGLp4ozURvWYCpM23yxCsUrSB5ukria6I - 304 null text/css 5.7301ms
+2024-11-10 01:10:36.482 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:10:36.482 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:10:36.489 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 4.7706ms
+2024-11-10 01:10:36.530 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.2872ms
+2024-11-10 01:10:52.928 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/user/create - null null
+2024-11-10 01:10:52.940 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:10:53.006 +03:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller CarPark.User.Controllers.UserController (CarPark.User).
+2024-11-10 01:10:58.695 +03:00 [INF] Executing ViewResult, running view Create.
+2024-11-10 01:10:58.746 +03:00 [INF] Executed ViewResult - view Create executed in 52.1195ms.
+2024-11-10 01:10:58.746 +03:00 [INF] Executed action CarPark.User.Controllers.UserController.Create (CarPark.User) in 5740.073ms
+2024-11-10 01:10:58.746 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:10:58.747 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/user/create - 200 null text/html; charset=utf-8 5819.3568ms
+2024-11-10 01:10:58.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:10:58.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:10:58.764 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 1.3688ms
+2024-11-10 01:10:58.802 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.2649ms
+2024-11-10 01:24:03.207 +03:00 [INF] User profile is available. Using 'C:\Users\Abdurrahman TOPRAK\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-10 01:24:04.282 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-10 01:24:04.283 +03:00 [INF] Hosting environment: Development
+2024-11-10 01:24:04.283 +03:00 [INF] Content root path: C:\Users\Abdurrahman TOPRAK\source\repos\CarPark\CarPark.User
+2024-11-10 01:24:04.313 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/ - null null
+2024-11-10 01:24:04.442 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:24:04.510 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CarPark.User.Controllers.HomeController (CarPark.User).
+2024-11-10 01:24:04.519 +03:00 [INF] Executing ViewResult, running view Index.
+2024-11-10 01:24:04.745 +03:00 [INF] Executed ViewResult - view Index executed in 228.0225ms.
+2024-11-10 01:24:04.752 +03:00 [INF] Executed action CarPark.User.Controllers.HomeController.Index (CarPark.User) in 241.6169ms
+2024-11-10 01:24:04.753 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.HomeController.Index (CarPark.User)'
+2024-11-10 01:24:04.765 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/ - 200 null text/html; charset=utf-8 458.2425ms
+2024-11-10 01:24:04.883 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:24:04.883 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:24:04.887 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.2563ms
+2024-11-10 01:24:04.952 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.9899ms
+2024-11-10 01:24:23.678 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/user/create - null null
+2024-11-10 01:24:23.695 +03:00 [INF] Executing endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:24:23.780 +03:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller CarPark.User.Controllers.UserController (CarPark.User).
+2024-11-10 01:24:30.630 +03:00 [INF] Executing ViewResult, running view Create.
+2024-11-10 01:24:30.700 +03:00 [INF] Executed ViewResult - view Create executed in 72.9797ms.
+2024-11-10 01:24:30.700 +03:00 [INF] Executed action CarPark.User.Controllers.UserController.Create (CarPark.User) in 6920.2987ms
+2024-11-10 01:24:30.701 +03:00 [INF] Executed endpoint 'CarPark.User.Controllers.UserController.Create (CarPark.User)'
+2024-11-10 01:24:30.702 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/user/create - 200 null text/html; charset=utf-8 7024.1692ms
+2024-11-10 01:24:30.724 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_vs/browserLink - null null
+2024-11-10 01:24:30.724 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-10 01:24:30.727 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 2.3492ms
+2024-11-10 01:24:30.753 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44392/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.3281ms
