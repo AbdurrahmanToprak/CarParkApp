@@ -57,7 +57,7 @@ namespace CarPark.User.Controllers
             //}
             //});
 
-            var result4 = _employeeRepository.AsQueryable();
+            var result4 = _employeeRepository.GetAll();
 
             var result5 = _employeeRepository.GetById("672fdc85ae1e737c8f8fc54a");
 

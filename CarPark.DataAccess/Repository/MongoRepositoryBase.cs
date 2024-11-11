@@ -25,7 +25,7 @@ namespace CarPark.DataAccess.Repository
             _dbContext = new MongoDBContext(settings);
             _collection = _dbContext.GetMongoCollection<TEntity>();
         }
-        public GetManyResult<TEntity> AsQueryable()
+        public GetManyResult<TEntity> GetAll()
         {
             var result = new GetManyResult<TEntity>();
             try
@@ -36,14 +36,14 @@ namespace CarPark.DataAccess.Repository
             }
             catch (Exception ex)
             {
-                result.Message = $"AsQueryable {ex.Message}";
+                result.Message = $"GetAll {ex.Message}";
                 result.Success = false;
                 result.Result = null;
             }
             return result;
         }
 
-        public async Task<GetManyResult<TEntity>> AsQueryableAsync()
+        public async Task<GetManyResult<TEntity>> GetAllAsync()
         {
             var result = new GetManyResult<TEntity>();
             try
@@ -54,7 +54,7 @@ namespace CarPark.DataAccess.Repository
             }
             catch (Exception ex)
             {
-                result.Message = $"AsQueryableAsync {ex.Message}";
+                result.Message = $"GetAllAsync {ex.Message}";
                 result.Success = false;
                 result.Result = null;
             }

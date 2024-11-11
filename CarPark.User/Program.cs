@@ -1,5 +1,9 @@
+using CarPark.Business.Abstract;
+using CarPark.Business.Concrete;
 using CarPark.Core.Repository.Abstract;
 using CarPark.Core.Settings;
+using CarPark.DataAccess.Abstract;
+using CarPark.DataAccess.Concrete;
 using CarPark.DataAccess.Repository;
 using CarPark.User.Resources;
 using Microsoft.AspNetCore.Builder;
@@ -71,6 +75,9 @@ builder.Services.AddMvc()
 
 builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("MongoDBConnection"));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(MongoRepositoryBase<>));
+builder.Services.AddScoped<IEmployeeDataAccess , EmployeeDataAccess>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 
 var app = builder.Build();
 
