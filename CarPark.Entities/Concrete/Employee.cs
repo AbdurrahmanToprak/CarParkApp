@@ -1,5 +1,7 @@
-﻿using MongoDB.Bson;
+﻿using AspNetCore.Identity.MongoDbCore.Models;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDbGenericRepository.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +10,14 @@ using System.Threading.Tasks;
 
 namespace CarPark.Entities.Concrete
 {
-    public class Employee : BaseModel
+    [CollectionName("Employee")]
+    public class Employee : MongoIdentityUser
     {
-        public string UserName { get; set; }
-
-        public string Email { get; set; }
-
-        public string Password { get; set; }
-
-        public string[] Roles { get; set; }
-
+        public Employee() 
+        {
+            CreatedDate = DateTime.Now;
+            Status = 1;
+        }
         public EmployeeContact EmployeeContact { get; set; }
 
         public ICollection<Address> Addresses { get; set; }

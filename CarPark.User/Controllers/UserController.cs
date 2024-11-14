@@ -57,19 +57,19 @@ namespace CarPark.User.Controllers
             //}
             //});
 
-            var result4 = _employeeRepository.GetAll();
+            //var result4 = _employeeRepository.GetAll();
 
-            var result5 = _employeeRepository.GetById("672fdc85ae1e737c8f8fc54a");
+            //var result5 = _employeeRepository.GetById("672fdc85ae1e737c8f8fc54a");
 
-            var result6 = _employeeRepository.DeleteOne(x => x.Email.Contains("111"));
+            //var result6 = _employeeRepository.DeleteOne(x => x.Email.Contains("111"));
 
-            var result7 = _employeeRepository.ReplaceOne(new Employee
-            {
-                Email = "abdurrahmantoprak@gmail.com",
-                Password = "123456789",
-                CreatedDate = DateTime.Now,
-                UserName = "Toprak23",
-            }, "672fdc85ae1e737c8f8fc54a");
+            //var result7 = _employeeRepository.ReplaceOne(new Employee
+            //{
+            //    Email = "abdurrahmantoprak@gmail.com",
+            //    Password = "123456789",
+            //    CreatedDate = DateTime.Now,
+            //    UserName = "Toprak23",
+            //}, "672fdc85ae1e737c8f8fc54a");
 
                 
                

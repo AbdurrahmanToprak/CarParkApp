@@ -1,3 +1,4 @@
+using AspNetCore.Identity.MongoDbCore.Models;
 using CarPark.Business.Abstract;
 using CarPark.Business.Concrete;
 using CarPark.Core.Repository.Abstract;
@@ -5,15 +6,21 @@ using CarPark.Core.Settings;
 using CarPark.DataAccess.Abstract;
 using CarPark.DataAccess.Concrete;
 using CarPark.DataAccess.Repository;
+using CarPark.Entities.Concrete;
 using CarPark.User.Resources;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Localization.Routing;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Serilog;
+using System;
 using System.Configuration;
 using System.Globalization;
 using System.Reflection;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +80,40 @@ builder.Services.AddMvc()
     }
     );
 
+
+builder.Services.AddAuthentication(option =>
+{
+    option.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    option.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+})
+.AddCookie(IdentityConstants.ApplicationScheme, options =>
+ {
+     options.LoginPath = "/Account/Login";
+     options.AccessDeniedPath = "/Account/AccessDenied";
+ });
+
+
+builder.Services.AddIdentityCore<Employee>(options =>
+{
+    // 
+})
+.AddRoles<MongoIdentityRole>()
+.AddMongoDbStores<Employee, MongoIdentityRole, Guid>(
+    builder.Configuration.GetValue<string>("MongoDBConnection:ConnectionString"),
+    builder.Configuration.GetValue<string>("MongoDBConnection:Database")
+)
+.AddSignInManager()
+.AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.LoginPath = "/Account/Login";
+    options.SlidingExpiration = true;
+});
+
 builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("MongoDBConnection"));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(MongoRepositoryBase<>));
 builder.Services.AddScoped<IEmployeeDataAccess , EmployeeDataAccess>();
@@ -94,6 +135,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 var options = app.Services.GetService<IOptions<RequestLocalizationOptions>>()?.Value;
