@@ -21,5 +21,9 @@ namespace CarPark.User.Controllers
             return View(result.Result); 
         }
 
+        public IActionResult Settings()
+        {
+            return View();
+        }
     }
 }
