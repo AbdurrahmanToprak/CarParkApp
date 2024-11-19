@@ -69,6 +69,7 @@ builder.Services.Configure<RequestLocalizationOptions>(opt => {
 
     //} };
 });
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddMvc()
     .AddViewLocalization()
@@ -118,6 +119,8 @@ builder.Services.Configure<MongoSettings>(builder.Configuration.GetSection("Mong
 builder.Services.AddScoped(typeof(IRepository<>), typeof(MongoRepositoryBase<>));
 builder.Services.AddScoped<IEmployeeDataAccess , EmployeeDataAccess>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<ICityDataAccess, CityDataAccess>();
+builder.Services.AddScoped<ICityService, CityService>();
 
 
 var app = builder.Build();
