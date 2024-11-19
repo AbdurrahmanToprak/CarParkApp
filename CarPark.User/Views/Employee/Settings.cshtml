@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <form class="row" asp-controller="Employee" asp-action="Settings" enctype="multipart/form-data" method="post">
+        <div class="col-lg-8">
+            <div class="card">
+                <h4 class="card-title"><strong>Personel Bilgileri</strong></h4>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">Adınız</label>
+                            <input name="Name" class="form-control" type="text" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">Soyadınız</label>
+                            <input name="SurName" class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">Şehir</label>
+                            <select class="form-control" data-provide=selectpicker">
+                                <option>Ankara</option>
+                                <option>İstanbul</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">Telefon Numarası</label>
+                            <input name="PhoneNumber" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4 class="card-title"><strong>Hesap Bilgileri</strong></h4>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">Kullanıcı Adı</label>
+                            <input name="UserName" class="form-control" type="text" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="text-fader">E-mail</label>
+                            <input name="Email" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <h4 class="card-title"><strong>Profil Resmi</strong></h4>
+                <div class="card-body">
+                    <div class="flexbox gap-items-4">
+                        <img class="avatar avatar-xl" src="~/assets/assets/img/avatar/1.jpg"/>
+                        <div class="flex-grow">
+                            <h5>Abdurrahman Toprak</h5>
+                            <div class="flexbox justify-content-start mt-16">
+                                <div class="file-group file-group-inline">
+                                    <button class="btn btn-sm btn-bold btn-secondary file-browser" type="button">Değiştir</button>
+                                    <input type="file" name="Image" />
+                                </div> 
+                                <a class="btn btn-sm btn-bold btn-danger" href="#">Sil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4 class="card-title"><strong>Bildirimler</strong></h4>
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <p><strong>Bildirimler</strong></p>
+                            <p>Diğer Kullanıcılardan Bildirim Al</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="ReceiveNotification" />
+                            <span class="switch-indicator"></span>
+                        </label>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <p><strong>Mesajlar</strong></p>
+                            <p>Diğer Kullanıcılardan Mesaj Al</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" name="ReceiveMessage" />
+                            <span class="switch-indicator"></span>
+                        </label>
+                    </div>
+                </div>
+                <hr />
+                <button class="btn btn-block btn-bold btn-primary" type="submit">Kaydet</button>
+            </div>
+
+        </div>
+    </form>
+    
+</div>
+
