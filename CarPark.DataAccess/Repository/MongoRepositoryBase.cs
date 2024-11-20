@@ -181,12 +181,20 @@ namespace CarPark.DataAccess.Repository
             return result;
         }
 
-        public GetOneResult<TEntity> GetById(string id)
+        public GetOneResult<TEntity> GetById(string id, string type = "object")
         {
             var result = new GetOneResult<TEntity>();
             try
             {
-                var objectId = ObjectId.Parse(id);
+                object objectId = null;
+                if(type=="guid")
+                {
+                    objectId = Guid.Parse(id);
+                }
+                else
+                {
+                    objectId = ObjectId.Parse(id);
+                }
                 var filter = Builders<TEntity>.Filter.Eq("_id", objectId);
                 var data = _collection.Find(filter).FirstOrDefault();
                 if (data != null)
@@ -201,12 +209,20 @@ namespace CarPark.DataAccess.Repository
             return result;
         }
 
-        public async Task<GetOneResult<TEntity>> GetByIdAsync(string id)
+        public async Task<GetOneResult<TEntity>> GetByIdAsync(string id, string type = "object")
         {
             var result = new GetOneResult<TEntity>();
             try
             {
-                var objectId = ObjectId.Parse(id);
+                object objectId = null;
+                if (type == "guid")
+                {
+                    objectId = Guid.Parse(id);
+                }
+                else
+                {
+                    objectId = ObjectId.Parse(id);
+                }
                 var filter = Builders<TEntity>.Filter.Eq("_id", objectId);
                 var data = await _collection.Find(filter).FirstOrDefaultAsync();
                 if (data != null)
@@ -289,12 +305,20 @@ namespace CarPark.DataAccess.Repository
             return result;
         }
 
-        public GetOneResult<TEntity> ReplaceOne(TEntity entity, string id)
+        public GetOneResult<TEntity> ReplaceOne(TEntity entity, string id, string type="object")
         {
             var result = new GetOneResult<TEntity>();
             try
             {
-                var objectId = ObjectId.Parse(id);
+                object objectId = null;
+                if (type == "guid")
+                {
+                    objectId = Guid.Parse(id);
+                }
+                else
+                {
+                    objectId = ObjectId.Parse(id);
+                }
                 var filter = Builders<TEntity>.Filter.Eq("_id", objectId);
                 var updatedDocument = _collection.ReplaceOne(filter,  entity);
                 result.Entity = entity;
@@ -308,12 +332,20 @@ namespace CarPark.DataAccess.Repository
             return result;
         }
 
-        public async Task<GetOneResult<TEntity>> ReplaceOneAsync(TEntity entity, string id)
+        public async Task<GetOneResult<TEntity>> ReplaceOneAsync(TEntity entity, string id, string type="object")
         {
             var result = new GetOneResult<TEntity>();
             try
             {
-                var objectId = ObjectId.Parse(id);
+                object objectId = null;
+                if (type == "guid")
+                {
+                    objectId = Guid.Parse(id);
+                }
+                else
+                {
+                    objectId = ObjectId.Parse(id);
+                }
                 var filter = Builders<TEntity>.Filter.Eq("_id", objectId);
                 var updatedDocument = await _collection.ReplaceOneAsync(filter, entity);
                 result.Entity = entity;

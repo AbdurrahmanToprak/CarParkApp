@@ -1,0 +1,156 @@
+﻿
+@model GetManyResult<Employee>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6">
+    <div class="card">
+        <h4 class="card-title"><strong>Personeller</strong></h4>
+
+        <div class="card-body">
+            <table class="table table-separated">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Email</th>
+                        <th>Şehir</th>
+                        <th class="text-canter w-100px">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var index = 1;
+                    }
+                    @foreach(var item in Model.Result)
+                    {
+                        
+                        <tr>
+                            <th scope="row">@index</th>
+                            <td>@(item.Name + " " + item.SurName)</td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.CityName</td>
+                            <td class="text-right table-actions">
+                                <button onclick="roleAdd('@item.Id')" class="btn btn-xs btn-danger">Rol İşlem</button> 
+                            </td>
+                        </tr>
+                        index += 1;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Roller</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modelBody">
+                <div class="switch-stacked">
+                    <input type="hidden" name="employeeId" id="employeeId" />
+                    <div class="row" id="chckRoles">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" >Kapat</button>
+                <button type="button" class="btn btn-primary" id="saveRoles">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        function roleAdd(id) {
+            $("#roleModal").modal("show");
+            $("#modelBody").LoadingOverlay("show");
+            $.ajax({
+                url: "/getroles/" + id,
+                type: "GET",
+                success: function(data){
+                    if (data.success) {
+                        $("#modelBody").LoadingOverlay("hide");
+                        $("#chckRoles").html("");
+                        $("#employeeId").val(id);
+                        $.each(data.entity.roles, function (index, role) {
+                            var isChecked = "";
+                            $.each(data.entity.employeeRoleList, function (index2, employeeRole) {
+                                if (role.id == employeeRole.id) {
+                                    isChecked = "checked"
+                                }
+                            })
+                            $("#chckRoles").append(
+                                "<label class='switch switch-success'>" +
+                                "<input name='chckRole' value='"+role.id+"' type='checkbox' "+isChecked+">" +
+                                "<span class='switch-indicator'></span>" +
+                                "<span class='switch-description'>" + role.normalizedName + "</span>" +
+                                "</label>"
+                            );
+                        });
+                    }
+                },
+                error: function (data){
+                    $("#modelBody").LoadingOverlay("hide");
+                }
+            })
+        }
+
+        $("#saveRoles").on('click', function () {
+            $("#modelBody").LoadingOverlay("show");
+            var employeeId = $("#employeeId").val();
+            var employeeRoleList = [];
+            $("input:checkbox[name=chckRole]:checked").each(function () {
+                employeeRoleList.push($(this).val());
+            });
+
+            $.ajax({
+                url: "/update/employee/roles",
+                type: "POST",
+                data: {
+                    employeeId: employeeId,
+                    employeeRoleList: employeeRoleList
+                },
+                success: function (response) {
+                    $("#modelBody").LoadingOverlay("hide");
+                    $("#roleModal").modal("hide"); 
+
+                    if (response.success) {
+                        Swal.fire(
+                            'Başarılı',
+                            response.message,
+                            'success'
+                        );
+                    } else {
+                        Swal.fire(
+                            'Hata!',
+                            response.message,
+                            'error'
+                        );
+                    }
+                },
+                error: function () {
+                    $("#modelBody").LoadingOverlay("hide");
+                    Swal.fire(
+                        'Hata!',
+                        'Rol güncelleme sırasında bir hata oluştu.',
+                        'error'
+                    );
+                }
+            });
+        });
+
+    </script>
+}

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarPark.Models.ViewModels.Employee
 {
-    public class EmployeeProfileInfo
+    public class EmployeeProfileInfo 
     {
         public string UserName { get; set; }
         public string Email { get; set; }
